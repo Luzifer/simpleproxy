@@ -1,0 +1,5 @@
+---
+notify:
+  - type: dockerhub
+    target: https://registry.hub.docker.com/u/luzifer/simpleproxy/trigger/0d73cbde-5e54-4663-89d0-36b3af1cb55b/
+    filter: success

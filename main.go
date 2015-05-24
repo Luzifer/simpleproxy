@@ -1,9 +1,11 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"net/http"
 	"net/url"
+	"os"
 	"strings"
 
 	"github.com/elazarl/goproxy"
@@ -11,6 +13,12 @@ import (
 
 func main() {
 	cfg := getConfig()
+
+	if cfg.TargetBaseURL == "" {
+		flag.Usage()
+		fmt.Println("\nPlease provide a target URL.")
+		os.Exit(1)
+	}
 
 	proxy := goproxy.NewProxyHttpServer()
 	proxy.OnRequest().HandleConnect(goproxy.AlwaysReject)
