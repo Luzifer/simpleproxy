@@ -7,4 +7,4 @@ RUN apk --update add wget && \
     unzip simpleproxy_master_linux-386.zip
 
 ENTRYPOINT ["/simpleproxy/simpleproxy"]
-CMD ["--help"]
+CMD ["--"]
